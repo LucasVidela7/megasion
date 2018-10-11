@@ -1,0 +1,68 @@
+<body>
+    {% include 'backoffice/includes/header.html' %}
+    <section class="productos">
+        <div class="contenido">
+            <h1>
+                {% if url_categoria %}
+                    <a href="{%url 'productos' %}" >Productos</a>
+
+                    {% if url_producto %}
+                        > <a href="{%url 'productos_categorias' url_categoria %}" >{{url_categoria}}</a>
+                        > {{url_producto}}
+                    {% else %}
+                        > {{url_categoria}}
+                    {% endif %}
+                {% else %}
+                    Productos
+                {% endif %}
+            </h1>
+            {% if categorias %}
+
+                <ul class="listar-productos">
+                {% for categoria in categorias %}
+                    <a href="{{categoria.nombre_categoria}}/">
+                    <li>
+                        <article class="producto">
+                            <img src="{{categoria.imagen.url}}" />
+                            <p>{{categoria.nombre_categoria}}</p>
+                        </article>
+                    </li>
+                    </a>
+                {% endfor %}
+                </ul>
+            {% elif productos_categoria %}
+
+                <ul class="listar-productos">
+                {% for producto in productos_categoria %}
+                    <a href="{{producto.id}}">
+                    <li>
+                        <article class="producto">
+                            <img src="{{producto.foto_producto_1.url}}" />
+                            <p>{{producto.nombre_producto}}</p>
+                        </article>
+                    </li>
+                    </a>
+                {% endfor %}
+                </ul>
+            {% elif producto %}
+                <ul class="listar-productos">
+                {% for producto in productos_categoria %}
+                    <a href="{{producto.id}}">
+                    <li>
+                        <article class="producto">
+                            <img src="{{producto.foto_producto_1.url}}" />
+                            <p>{{producto.nombre_producto}}</p>
+                        </article>
+                    </li>
+                    </a>
+                {% endfor %}
+                </ul>
+            {% else %}
+            <p>No se cargaron categorias.</p>
+            {% endif %}
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+</body>

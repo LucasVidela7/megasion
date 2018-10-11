@@ -1,0 +1,74 @@
+
+<title>Megasion</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Libre+Franklin|Nunito" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<style>
+
+    header{
+        background-color:#029BDE;
+        height: 100px;
+        margin-bottom:50px;
+    }
+    header a.logo{
+
+        {% load staticfiles  %}
+        background-image:url("{% static 'images/Logo.png' %}");
+        background-size: 290px 90px;
+        cursor:pointer;
+        margin-top:5px;
+        display:inline-block;
+        height:90px;
+        width:290px;
+     }
+
+     nav.socials{
+        float:right;
+        display:inline-block;
+     }
+
+    nav.socials ul{
+        list-style: none;
+        margin:0;
+
+    }
+
+    nav.socials ul li{
+        float:right;
+        text-align:center;
+        margin-top:5px;
+        display:inline-block;
+        width:90px;
+        height:90px;
+    }
+
+    nav.socials ul li i{
+        color:rgba(255,255,255,0.5);
+        cursor:pointer;
+        margin-top:20px;
+        font-size:50px;
+        vertical-align:middle;
+        -webkit-transition: all .25s ease-in-out;
+    }
+
+    nav.socials ul li i:hover{
+        color:#FFF;
+    }
+
+</style>
+<header>
+    <div class="contenido">
+        <a href="{%url 'index' %}" class="logo"></a>
+        <nav class="socials">
+            <ul>
+                <li><i class="fab fa-facebook-square"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+                <li><i class="fab fa-whatsapp"></i></li>
+            </ul>
+        </nav>
+    </div>
+</header>

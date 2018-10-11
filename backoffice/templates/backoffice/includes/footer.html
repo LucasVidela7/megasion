@@ -1,0 +1,105 @@
+<style>
+    footer{
+        background-color:#029BDE;
+        border-top:5px solid #00253E;
+        height:auto;
+        clear: both;
+        margin-top:0;
+        padding-top:50px;
+        padding-bottom:50px;
+    }
+
+    footer:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .footer-info{
+        color:#FFF;
+        display:inline-block;
+        margin:0;
+        padding:0;
+        float:left;
+        text-align:left;
+        width:33.3%;
+    }
+
+    .footer-info h3{
+        display:block;
+        margin:0;
+        padding: 0;
+        text-transform:uppercase;
+        font-weight:bold;
+        padding-bottom:10px;
+    }
+
+    .footer-info ul{
+        padding:0;
+    }
+
+    .footer-info ul li{
+        list-style:none;
+        margin:0;
+        max-width:75%;
+        padding-bottom:5px;
+
+    }
+
+    .footer-info ol{
+        padding:0;
+    }
+
+    .footer-info ol li{
+        list-style:none;
+        margin:0;
+        max-width:75%;
+        padding-bottom:20px;
+
+    }
+
+    .footer-info ul li a{
+        color:#FFF;
+        text-decoration:none;
+        -webkit-transition: all 0.25s ease-in-out;
+    }
+
+    .footer-info ul li a:hover{
+        color:#00253E;
+    }
+</style>
+
+<footer>
+    <div class="contenido">
+        <section class="footer-info">
+            <ol>
+
+                <li>Hernandarias 320, Lomas del Mirador, Pcia de Buenos Aires.</li>
+                <li>Todos los productos son diseñados, fabricados y ensamblados en Argentina.</li>
+                <li>&copy; 2014-2018 Megasion.</li>
+            </ol>
+
+        </section>
+        <section class="footer-info">
+            <h3>
+                Productos
+            </h3>
+
+            {% if categorias %}
+
+                <ul>
+                {% for a in categorias %}
+
+                    <li>
+                        <a href="productos/{{a.nombre_categoria}}/">{{a.nombre_categoria}}</a>
+                    </li>
+
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </section>
+        <section class="footer-info">
+            <h3>Redes Sociales</h3>
+        </section>
+    </div>
+</footer>
