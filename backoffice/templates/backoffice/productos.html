@@ -4,7 +4,7 @@
         <div class="contenido">
             <h1>
                 {% if url_categoria %}
-                    <a href="{%url 'productos' %}" >Productos</a>
+                    <a href="{%url 'productos' %}" >Categorias de Productos</a>
 
                     {% if url_producto %}
                         > <a href="{%url 'productos_categorias' url_categoria %}" >{{url_categoria}}</a>
@@ -13,7 +13,7 @@
                         > {{url_categoria}}
                     {% endif %}
                 {% else %}
-                    Productos
+                    Categorias de Productos
                 {% endif %}
             </h1>
             {% if categorias %}
@@ -58,11 +58,10 @@
                 {% endfor %}
                 </ul>
             {% else %}
-            <p>No se cargaron categorias.</p>
+            <p>No se cargaron productos para esta categoria.</p>
             {% endif %}
         </div>
     </section>
-    <footer>
-
-    </footer>
+    <div class="break">a</div>
+    {% include 'backoffice/includes/footer.html' %}
 </body>

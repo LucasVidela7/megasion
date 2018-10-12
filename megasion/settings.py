@@ -25,10 +25,11 @@ SECRET_KEY = 'd+#@-s2evll()n(xugv3$(^f)w1xts%lt++cu)z&x_b3@x!(%5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-with open("/home/lucasv/Escritorio/.code-lucas/.IP_SERVIDOR", "r")  as file:
-    IP2 = file.read()
+#with open("/home/lucasv/Escritorio/.code-lucas/.IP_SERVIDOR", "r")  as file:
+#    IP2 = file.read()
 
 IP = get('https://api.ipify.org').text
+IP2 = IP
 ALLOWED_HOSTS = [IP, '127.0.0.1', '0.0.0.0', IP2, 'maincra.servegame.com']
 
 # Application definition
